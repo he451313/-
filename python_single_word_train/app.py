@@ -6,7 +6,7 @@ from urllib.parse import unquote
 
 app = Flask(__name__)
 
-# --- 詞彙表加載邏輯 (保持不變) ---
+# --- 詞彙表加載邏輯 ---
 def load_vocabulary(filepath="vocab.txt"):
     """從 TXT 檔案加載詞彙表"""
     vocab = []
@@ -72,4 +72,5 @@ def speak(text_to_speak):
         return "Error generating speech", 500
 
 if __name__ == '__main__':
+
     app.run(debug=True)
