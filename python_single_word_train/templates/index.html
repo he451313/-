@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>單字列表</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>單字總覽</h1>
+        
+        <table class="vocab-table">
+            <thead>
+                <tr>
+                    <th class="play-col">播放</th>
+                    <th class="num-col">#</th>
+                    <th class="english-col">英文</th>
+                    <th class="chinese-col">中文</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Python Flask 會在這裡動態生成每一行 -->
+                {% for word in vocabulary %}
+                <tr>
+                    <td class="play-col">
+                        <!-- data-word 屬性用來儲存要念的單字 -->
+                        <button class="play-btn" data-word="{{ word.english }}">▶</button>
+                    </td>
+                    <td class="num-col">{{ loop.index }}</td>
+                    <td class="english-col">{{ word.english }}</td>
+                    <td class="chinese-col">{{ word.chinese }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 隱藏的 audio 播放器，所有按鈕共用這一個 -->
+    <audio id="audio-player" style="display: none;"></audio>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.vocab-table th, .vocab-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.vocab-table thead th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+}
+
+.vocab-table tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.vocab-table tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+/* 各欄位的寬度與對齊設定 */
+.play-col { width: 60px; text-align: center; }
+.num-col { width: 60px; }
+.english-col { font-weight: 500; color: #0056b3; }
+.chinese-col { color: #555; }
+
+.play-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.play-btn:hover {
+    background-color: #2980b9;
+}
+
+.play-btn:active {
+    transform: scale(0.95);
+}
+
+/* 當按鈕被點擊播放時的狀態 */
+.play-btn.playing {
+    background-color: #e74c3c;
+}
